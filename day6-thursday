@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a=6
+        let b=5
+        if(a<b){
+            document.write("Hello,Guna","<br>")
+        }else{
+            document.write("hi,chandhu","<br>")
+        }
+        document.write("Brilliant student")
+
+        let name=prompt("Enter your name:") 
+        let age=prompt("Enter your age:")
+        if(age<18){
+            alert(name +" u are too young to marry")
+        }else if(age>35){
+            alert(name +" u are to old marry")
+        }else{
+            alert(name +" perfect age to marry")
+        }
+        alert("welcome to world")
+    </script>
+</body>
+</html>
+
+Conditional Statements:
+To make set of instructions(block of code) execute only when the given condition is true.
+ Used to decide whether the code has to execute or skip based on the given condition.
+Line - line (sequence).
+Block of code: set of instructions.
+--it will execute only when specific condition is true.
+Condition: An expression that evaluates an result(True or False).
+Ex: console.log(5>6)
+Methods:
+if 
+If-else
+Else if
+Switch
+Ternary operator 
+If: only one possible condition.
+--if the condition is true it will execute otherwise it skips.
+Syntax:
+If(condition){
+---block of code
+}
+Example:
+let a=4;
+        let b=5;
+        if(a<b){
+            document.write("Hello,Guna","<br>");
+        }
+        document.write("Brilliant student")
+Output:
+Hello,Guna
+Brilliant student
+
+If-else:
+let a=6
+        let b=5
+        if(a<b){
+            document.write("Hello,Guna","<br>")
+        }else{
+            document.write("hi,chandhu","<br>")
+        }
+        document.write("Brilliant student")
+Output:
+Hi,chandhu
+Brilliant student
+
+Else-if:
+let name=prompt("Enter your name:") 
+        let age=prompt("Enter your age:")
+        if(age<18){
+            alert(name +" u are too young to marry")
+        }else if(age>35){
+            alert(name +" u are to old marry")
+        }else{
+            alert(name +" perfect age to marry")
+        }
+        alert("welcome to world")
