@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //let num=prompt("Enter the number: ")
+        //switch(true){
+        //    case num>0:
+        //    document.write("number is positive");
+        //    break;
+        //case num==0:
+        //    document.write("number is zero");
+        //    break;
+        //case num<0:
+        //    document.write("number is negative");
+        //    break;
+        //default:
+        //    document.write("Invalid input");
+        //}
+
+        //let day=prompt("Enter the day:")
+        //switch(day){
+        //    case "Monday":
+        //    case "Tuesday":
+        //    case "Wednesday":
+        //    case "Thursday":
+        //    document.write("Its a week day")
+        //    break;
+        //    case "Friday":
+        //    case "Saturday":
+        //    case "Sunday":
+        //    document.write("Its a weekend")
+        //    break;
+        //    default:
+        //    document.write("Invalid day")
+        //}
+
+        //let day=prompt("Enter the day:").toLowerCase()
+        //switch(day){
+        //    case "monday":
+        //    case "tuesday":
+        //    case "wednesday":
+        //    case "thursday":
+        //    document.write("It's a week day")
+        //    break;
+        //    case "friday":
+        //    case "saturday":
+        //    case "sunday":
+        //    document.write("It's a weekend")
+        //    break;
+        //    default:
+        //    document.write("Invalid day")
+        //}
+
+        //electricitybill calculation
+        //let units = parseInt(prompt("Enter the number of units: "))
+        //let bill = 0
+        //if (units <= 50) {
+        //    bill = units * 2
+        //} else if (units <= 150) {
+        //    bill = 50 * 2 + (units - 50) * 3
+        //} else if (units <= 250) {
+        //    bill = 50 * 2 + 100 * 3 + (units - 150) * 5
+        //} else {
+        //    bill = 50 * 2 + 100 * 3 + 100 * 5 + (units - 250) * 8
+        //}
+        //bill = bill + (bill * 20) / 100;
+        //document.write("Your electricity bill is: " + bill)
+
+        //handshaking problem
+        //let N = parseInt(prompt("Enter the number of students: "))
+        //let handshakes = N * (N - 1) / 2
+        //document.write("The number of handshakes made by students is: " + handshakes)
+
+        //reversing the number 
+        //let num = parseInt(prompt("Enter the number: "))
+        //let reverse = 0
+        //while (num != 0) {
+        //    let remainder = num % 10
+        //    reverse = reverse * 10 + remainder
+        //    num = Math.floor(num / 10)
+        //}
+        //document.write("The reverse of the number is: " + reverse)
+
+        //armstrong number 
+        //let num = parseInt(prompt("Enter the number: "))
+        //let originalNum, remainder, n = 0, result = 0, power;
+        //originalNum = num;
+        //while (originalNum != 0) {
+        //    originalNum = Math.floor(originalNum / 10);
+        //    n = n + 1;
+        //}
+        //originalNum = num;
+        //while (originalNum != 0) {
+        //    remainder = originalNum % 10;
+        //    power = Math.pow(remainder, n);
+        //    result = result + power;
+        //    originalNum = Math.floor(originalNum / 10);
+        //}
+        //if (result == num)
+        //    document.write(num + " is an Armstrong number");
+        //else
+        //    document.write(num + " is not an Armstrong number");
+
+        //prime numbers
+        //let num = parseInt(prompt("Enter the number: "))
+        //let flag = true
+        //for (let i = 2; i <= Math.sqrt(num); i++) {
+        //    if (num % i == 0) {
+        //        flag = false
+        //        break
+        //    }
+        //}
+        //if (num == 1) {
+        //    document.write("1 is neither prime nor composite")
+        //} else if (flag) {
+        //    document.write(num + " is a prime number")
+        //} else {
+        //    document.write(num + " is not a prime number")
+        //}
+
+
+    </script>
+</body>
+</html>
