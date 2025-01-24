@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //arrow functions without parameter
+        //let C=()=>{
+            //document.write("hi guna","<br>")
+        //}
+        //C()
+
+        //arrow functions with parameter
+        //let D=(name,age)=>{
+        //    document.write(`hello ${name}<br>your age is ${age}`,"<br>")
+        //}
+        //D("guna",25)
+
+        //let x=(x,y)=>{
+            //document.write(x+y,"<br>")
+        //}
+        //x(20,30)
+        //x(40,50)
+
+        //arrow function without paranthesis
+        //let greet=x=>document.write(x);
+        //greet("hello")
+
+        //arrow function as expression
+        //let age=18;
+        //let welcome=(age<18) ?
+        //()=>document.write("hi guna"):
+        //()=>document.write("hi sekhar");
+        //welcome()
+
+        //function task1() {
+            //document.write("Task1 : Start","<br>")
+        //}
+        //function task2() {
+            //document.write("Task2 : Start","<br>")
+        //}
+        //function task3() {
+           // document.write("Task3 : Start","<br>")
+        //}
+        //task1()
+        //task2()
+        //task3()
+
+        //document.write("hi guna","<br>");
+        //setTimeout(()=>{
+            //document.write("hi i am waiting","<br>")
+        //},20000);
+        //document.write("I am in lab","<br>")
+        //document.write("I am working")
+
+        //callback functions
+        let name="guna"
+        function greet(name,callback){
+            document.write(`Hello, ${name}!`,"<br>")
+        callback();
+        }
+        function sayGoodbye(){
+            document.write(`Goodbye, ${name}`)
+        }
+        greet("guna",sayGoodbye)
+        
+
+    </script>
+</body>
+</html>
