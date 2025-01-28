@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .a{
+            color: blue;
+        }
+        .b{
+            color: chocolate;
+        }
+        .c{
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="b" id="p">Guna</h1>
+    <h2 class="c" id="q">Anusha</h1>
+    <h3 class="a" id="r">Chiru</h1>
+    <h2 class="b">Purushotham</h1>
+    <script>
+        //let x=document.getElementById("p")
+            //console.log(x)
+
+        let x=document.getElementsByClassName("a")
+            console.log(x)
+        for(let i=0;i<=x.length;i++){
+            console.log(x[i])
+        }
+
+        let y=document.getElementsByClassName("b")
+            console.log(y)
+        for(let i=0;i<=y.length;i++){
+            console.log(y[i])
+        }
+
+        let z=document.getElementsByTagName('h2')
+        
+        for(let i=0;i<=z.length;i++){
+            console.log(z[i])
+        }
+
+
+    </script>
+</body>
+</html>
+
+DOM( document object model):
+It is a programming interface in web development, that allows us to interact and manipulate (change) the html document.
+When the web page is loaded, the browser creates the dom of the webpage.
+When an html file is loaded into browser, the javascript cannot understand html document directly.
+DOM: is basically representation of same html document but in tree like structure composed of objects.
+HTML dom allows javascript to access (to get) and modify all elements in html.
+Keypoints:
+Structure: the dom represents the structure of html document as tree; each node in a tree represents element, attribute,text.
+Manipulation: using js, you can interact with elements(buttons,h,p) we can modify, add, remove element.
+Event handling
+World wide web cosortium
+<html>
+<head>
+<title>document</title>
+</head>
+<body>
+<h1>Hi everyone</h1>
+</body>
+</html>
+In dom all html elements are defined as objects.
+Properties: is a value that you can set to the objects(like changing content of an html element).
+Methods:an action.(like add or delete).
+Methods of document object: 
+Getting element:
+Getting an element by id
+Getting an element by class
+Returns all elements heving same class.
+Getting an element by tagname
+Getting an element by query selector
