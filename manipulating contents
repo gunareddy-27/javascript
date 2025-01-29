@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="a">Guna</h1>
+    <h1 class="b">Ashish</h1>
+    <h1 class="c">Prurushotham</h1>
+    <h2>Nithin</h2>
+    <h2>Sri</h2>
+
+    <script>
+        //let x=document.getElementsByClassName('a')
+        //console.log(x)
+        //for(let i=0;i<x.length;i++){
+            //console.log(x[i])
+        //}
+
+        //let x=document.getElementsByTagName('h2')
+        //console.log(x)
+        //for(let i=0;i<x.length;i++){
+            //console.log(x[i])
+        //}
+
+        //let x=document.getElementsByClassName('a')
+        //if(x.length > 0){
+            //console.log(x)
+        //for(let i=0;i<x.length;i++){
+                //console.log(x[i])
+        //}
+        //} else {
+        //console.log("No elements found with class 'a'")
+    //} 
+    
+        //let x=document.querySelector('h1')
+        //console.log(x)
+
+        //let x=document.querySelectorAll('.a, .b, .c')
+        //console.log(x)
+        //for(let i=0;i<x.length;i++){
+             //console.log(x[i])
+        //}
+
+        //let t=document.createElement("h3")
+        //t.className="tt"
+        //t.textContent="I am in clg"
+        //document.body.appendChild(t)
+        //console.log(t)
+
+        //const t=["guna","Ashish","hema"]
+        //for(let i=0;i<t.length;i++){
+            //let tt=document.createElement("h3")
+            //tt.className="tt"
+            //tt.textContent=t[i];
+           // console.log(t[i])
+           // console.log(tt)
+           // console.log(t)
+       // }
+
+        const g=["Harsha","Guru","Teja"]
+        for(let i=0;i<g.length;i++){
+            let gg=document.createElement('h4')
+            gg.className="gg"
+            gg.textContent=g[i];
+            console.log(g[i])
+            console.log(gg)
+            console.log(g)
+        }
+    </script>
+</body>
+</html>
+
+Getting an element by classname
+Returns all elements heving same class namename getElementbyClassName().
+Will return as html collection object.
+An html collection is an array like list of html elements,
+Length property provides the size of collection.
+    <h1 class="a">Guna</h1>
+    <h1 class="b">Ashish</h1>
+    <h1 class="c">Prurushotham</h1>
+    <script>
+        let x=document.getElementsByClassName('a')
+        console.log(x)
+        for(let i=0;i<x.length;i++){
+            console.log(x[i])
+        }
+    </script>
+Getting an element by tagname
+    <h2>Nithin</h2>
+    <h2>Sri</h2>    
+let x=document.getElementsByTagName('h2')
+        //console.log(x)
+        for(let i=0;i<x.length;i++){
+            console.log(x[i])
+        }
+Getting an element by query selector:
+Used to select html elements by its tagname, classname.it selects only first element.
+        let x=document.querySelector('h1')
+        console.log(x)
+Output:
+<h1 class=”a”>Guna</h1>
+Example:
+<h1 class="b" id="p">Guna</h1>
+    <h2 class="c" id="q">Anusha</h1>
+    <h3 class="a" id="r">Chiru</h1>
+    <h2 class="b">Purushotham</h1>
+    <script>
+        //let x=document.getElementById("p")
+            //console.log(x)
+        let x=document.getElementsByClassName("a")
+            console.log(x)
+        for(let i=0;i<=x.length;i++){
+            console.log(x[i])
+        }
+        let y=document.getElementsByClassName("b")
+            console.log(y)
+        for(let i=0;i<=y.length;i++){
+            console.log(y[i])
+        }
+        let z=document.getElementsByTagName('h2')
+        for(let i=0;i<=z.length;i++){
+            console.log(z[i])
+        }
+Query selctor all:
+Can be used to select elements by its name or classname.it returns  a nodelist which is an array like object.
+Example:
+        let x=document.querySelectorAll('.a, .b, .c')
+        console.log(x)
+        for(let i=0;i<x.length;i++){
+            console.log(x[i])
+        }
+Manipulate elements:
+To create html element
+--createElement()
+--document.createElement()
+--the method takes an html element tag name as string parameter.
+Example:
+        let t=document.createElement("h3")
+        t.className="tt"
+        t.textContent="I am in clg"
+        document.body.appendChild(t)
+        console.log(t)
+To create multiple elements:
