@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="a">
+        <h1>Guna</h1>
+        <h1>Ashish</h1>
+        <h1>Chiru</h1>
+    </div>
+    <div id="b">
+        <h2>Hema</h2>
+        <h2>Purushotham</h2>
+        <h2>Harshitha</h2>
+    </div>
+    <script>
+        let n=document.createElement('h2')
+        n.textContent='Guru'
+        let p=document.getElementById('b')
+        console.log("before inserting:")
+        console.log(p.innerText)
+        p.appendChild(n)
+        console.log("After inserting:")
+        console.log(p.innerText)
+
+
+let s=document.createElement('h1')
+s.textContent = "Dhanush"
+let g=document.createElement('h1')
+g.textContent = "Ganesh"
+let r=document.getElementById('a')
+console.log("before inserting:")
+console.log(r.innerText)
+r.insertBefore(g,r.children[0])
+r.insertBefore(s,g)
+console.log("After inserting:")
+console.log(r.innerText)
+r.removeChild(g)
+console.log("After removing:")
+console.log(r.innerText)
+      
+    </script>
+</body>
+</html>
+
