@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    
+    <!--<div id="a"></div>
+    <script type="text/babel">
+    const n=5
+    const element=<h1>React is {n*2} times better than jsx</h1>
+    const e=document.getElementById('a')
+    const root = ReactDOM.createRoot(e);
+    root.render(element)
+    </script>!-->
+
+    <!--<div id="a"></div>
+    <script type="text/babel">
+        const element=<h1 className="aa">Welcome to Guna IT solutions</h1>
+        const e=document.getElementById('a')
+        const root=ReactDOM.createRoot(e)
+        root.render(element)
+    </script>!-->
+
+    <!-- <script>
+        <div id="a"></div>
+        const b=React.createElement('h1',{id:'c'},"I am guna");
+        const d=document.getElementById('a')
+        const root=ReactDOM.createRoot(d)
+        root.render(b)
+    </script> !-->
+
+    <!--<div id="root"></div> 
+    <script type="text/babel">
+        const App=()=>{
+            const isLoggedIn=true;
+            return(
+                <div>
+                    {isLoggedIn ? (<h1>Welcome back,user!</h1>):(<h1>Please login</h1>)}
+                    {isLoggedIn && (<h1>You have a new notification</h1>)}
+                </div>
+            )
+        }
+        const root=ReactDOM.createRoot(document.getElementById('root'))
+        root.render(<App/>)
+    </script>!-->
+
+    <div id="a"></div>
+    <script type="text/babel">
+        function getGreeting(name){
+            return `Hello, ${name}! Welcome to MRU`
+        }
+        function Greeting(){
+            const name="guna"
+            return <h1>{getGreeting(name)}</h1>
+        }
+        const root=ReactDOM.createRoot(document.getElementById('a'))
+        root.render(<Greeting/>)
+    </script>
+</body>
+</html> 
+
+--to create a element in react js
+--react.createElement()
+Syntax:
+Type=tag name(h1,p,div)
+Prop=class,id
+ReactDOM.createRoot() -- to render the element
+React element =what to render
+Container=where to render
+JSX:
+Javascript xml
+--It is a syntax extension for javascript.
+--Jsx allows us to write html code in react js
+--Jsx all tags must be closed
+--Jsx compiles html code into js
+--Babel is a tool in jsx
+Funtions:
+Using a function call;
+--you can use a function call directly in the jsx expression.
