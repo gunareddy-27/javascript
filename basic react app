@@ -1,0 +1,62 @@
+import React from 'react';
+import './App.css';
+import Welcome from './Welcome.js';
+
+const App=()=>{
+  return(
+    <div style={{textAlign:'center',color:'red'}}>
+      <Welcome name="Guna" greeting="Hello"/>
+      <Welcome name="Ashish" greeting="Hi"/>
+    </div>
+  )
+}
+
+//const Welcome = () => <h1 className='message'>Hello guna</h1>
+
+//function App() {
+  //return (
+    //<div className='App'>
+      //<Welcome />
+    //</div>
+  //)
+//}
+export default App;
+
+.message{
+  color: blue;
+  background-color: aquamarine;
+  font-size: 40px;
+  text-align: center;
+  width: 30%;
+  margin: 0 auto;
+  animation: message-anim 4s infinite;
+  padding-top: 2mm;
+  transition: transform 0.5s ease-in-out;
+}
+
+.message:hover {
+  transform: translateX(-20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes message-anim {
+  0% {
+    transform: scale(1) translateX(100%);
+  }
+  100% {
+    transform: scale(1.2) translateX(0);
+  }
+}
+
+import React from 'react';
+
+const Welcome =(props)=>{
+    const{name , greeting}=props
+    return(
+        <h1 className='message'>
+            {greeting},{name}
+        </h1>
+    )
+}
+export default Welcome;
+
