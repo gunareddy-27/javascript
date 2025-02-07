@@ -1,0 +1,87 @@
+import React from 'react';
+import './App.css';
+import Welcome from './Welcome.js';
+import Greeting from './Greeting.js';
+import FruitList from './FruitList.js';
+import TodoList from './TodoList.js';
+
+const App = () => {
+  const isLoggedIn = true;
+  return (
+    <div style={{ textAlign: 'center', color: 'red' }} className="App">
+      <Welcome name="Guna" greeting="Hello" />
+      <Welcome name="Ashish" greeting="Hi" />
+      <Greeting isLoggedIn={isLoggedIn} />
+      <FruitList />
+      <TodoList/>
+    </div>
+  );
+}
+
+
+//const Welcome = () => <h1 className='message'>Hello guna</h1>
+
+//function App() {
+  //return (
+    //<div className='App'>
+      //<Welcome />
+    //</div>
+  //)
+//}
+
+
+export default App;
+
+import React from 'react';
+
+const TodoList = () => {
+    const todos = [
+      { id: 1, task: 'Wakes up' },
+      { id: 2, task: 'Freshes up' },
+      { id: 3, task: 'Goes to college'}
+    ];
+    return(
+    <ul>
+        {todos.map((todo) => (
+            <li key={todo.id} style={{color: 'blue'}}>{todo.task}</li>
+        ))}
+    </ul>
+)}
+export default TodoList;
+
+
+import React from 'react';
+
+const Welcome =(props)=>{
+    const{name , greeting}=props
+    return(
+        <h1 className='message'>
+            {greeting},{name}
+        </h1>
+    )
+}
+export default Welcome;
+
+import React from'react';
+const FruitList=()=>{
+    const fruits=['apple','banana','cherry','orange'];
+    const fruits1=['dragon fruit','grapes','berries','guava'];
+    return(
+        <div>
+            <h1>
+                Fruits list
+            </h1>
+            <ul>
+                {fruits.map((fruit,index)=>(
+                    <li key={index}>{fruit}</li>
+                ))}
+            </ul>
+            <ul>
+            {fruits1.map((fruit,index)=>(
+                    <li key={index}>{fruit}</li>
+                ))}
+            </ul>
+        </div>
+    )
+}
+export default FruitList;
