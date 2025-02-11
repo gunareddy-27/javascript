@@ -1,0 +1,75 @@
+import React from "react";
+import ProfileCard from "./components/ProfileCard";
+import './App.css'
+
+const App = () => {
+  return (
+    <div> 
+      <h1>User Profiles</h1>
+      <div className="profile-container" style={{display: 'flex', justifyContent: 'center'}}>
+        <ProfileCard
+          name="Guna reddy"
+          greeting="Hello! I love coding."
+          imageSrc="https://tse4.mm.bing.net/th?id=OIP.aH7YP-JvSTVNg1UO2rAyBwHaLH&pid=Api&P=0&h=180"
+        />
+        <ProfileCard
+          name="Ashish"
+          greeting="Hello! I love coding."
+          imageSrc="https://tse4.mm.bing.net/th?id=OIP.aH7YP-JvSTVNg1UO2rAyBwHaLH&pid=Api&P=0&h=180"
+        />
+        <ProfileCard
+          name="Purushotham"
+          greeting="Hello! I love coding."
+          imageSrc="https://tse4.mm.bing.net/th?id=OIP.aH7YP-JvSTVNg1UO2rAyBwHaLH&pid=Api&P=0&h=180"
+        />
+        <ProfileCard
+          name="Bhavana"
+          greeting="Hello! I love coding."
+          imageSrc="https://tse4.mm.bing.net/th?id=OIP.aH7YP-JvSTVNg1UO2rAyBwHaLH&pid=Api&P=0&h=180"
+        />
+      </div>
+    </div>
+  );
+};
+
+export default App;
+
+.profile-card {
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 15px;
+  text-align: center;
+  width: 200px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.profile-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+import React from "react";
+
+const ProfileCard = ({ name, greeting, imageSrc }) => {
+  return (
+    <div className="flex flex-wrap justify-center">
+      <div className="p-4 border rounded-lg shadow-md w-64 text-center bg-white m-4 profile-card">
+        <img src={imageSrc} alt={name} className="w-24 h-24 rounded-full mx-auto profile-image" />
+        <h2 className="text-lg font-semibold mt-2 profile-name">{name}</h2>
+        <p className="text-gray-600 profile-greeting">{greeting}</p>
+      </div>
+    </div>
+  );
+};
+
+export default ProfileCard;
