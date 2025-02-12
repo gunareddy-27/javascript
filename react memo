@@ -1,0 +1,63 @@
+React memo:
+It is a HOC(hign order component) is not a react hook.
+It will stop necessary-rendering of functional components of its props.
+It will improve the performance of the functional components 
+Parent
+<c1>
+<c2> #button #increment
+
+import { useState } from "react";
+
+import ChildA from "./components/ChildA";
+import ChildB from "./components/ChildB";
+
+const Parent = () => {
+  const [count, setCount] = useState(0);
+
+  const increment = () => {
+    setCount((c) => c + 1);
+  };
+
+  const decrement = () => {
+    setCount((c) => c - 1);
+  };
+
+  return (
+    <div>
+      <ChildA />
+      <ChildB count={count} increment={increment} decrement={decrement} />
+    </div>
+  );
+};
+
+export default Parent;
+
+
+import {memo} from 'react';
+const ChildA = () => {
+    console.log("Child A rendered")
+    return (
+      <div>
+        <h2>Child A</h2>
+        <p>This is Child A component</p>
+      </div>
+    );
+  };
+  
+  export default memo(ChildA);
+
+
+const ChildB = ({ count, increment, decrement }) => {
+    console.log("Child B rendered")
+    return (
+      <div>
+        <h2>Child B</h2>
+        <p>Count: {count}</p>
+        <button onClick={increment}>Increment</button>
+        <button onClick={decrement}>Decrement</button>
+      </div>
+    );
+  };
+  
+  export default ChildB;
+  
