@@ -1,0 +1,110 @@
+
+Assignment2
+const Parent = () => {
+  const [count, setCount] = useState(0);
+
+  const increment = () => {
+    setCount((c) => c + 1);
+  };
+
+  const decrement = () => {
+    setCount((c) => c - 1);
+  };
+
+  return (
+    <div>
+      <ChildA />
+      <ChildB count={count} increment={increment} decrement={decrement} />
+    </div>
+  );
+};
+
+export default Parent;
+*/
+import React, { createContext, useContext } from "react";
+import "./App.css"
+// Create context to hold the data
+const DataContext = createContext();
+
+function App() {
+  const data = { name: "Guna reddy", email: "gunareddymopuru@gmail.com" };
+
+  return (
+    // Provide the data to entire application
+    <DataContext.Provider value={data}>
+      <User1 />
+    </DataContext.Provider>
+  );
+}
+
+function User1(){
+  return <User2/>
+}
+
+function User2(){
+  return <User3/>
+}
+
+function User3(){
+  return <Profile/>
+}
+
+// USER 1 COMPONENT
+function Profile() {
+  const userData = useContext(DataContext);
+
+  return (
+    <div className="App">
+      <h1>{userData.name}</h1>
+      <h2>{userData.email}</h2>
+    </div>
+  );
+}
+
+export default App;
+
+function App(){
+  const data ="Hello I am Guna"
+  return(
+    <div>
+      <ChildA data={data}/>
+    </div>
+  )
+}
+function ChildA({data}){
+  return <ChildB data={data}/>
+}
+function ChildB({data}){
+  return <ChildC data={data}/>
+}
+function ChildC({data}){
+  return <ChildD data={data}/>
+}
+function ChildD({data}){
+  return <div>{data}</div>
+}
+export default App;
+import React, { createContext, useContext } from "react";
+const DataContext = createContext()
+function App() {
+  const data = "Hello I am Guna"
+  return (
+    <DataContext.Provider value={data}>
+      <ChildA />
+    </DataContext.Provider>
+  )
+}
+function ChildA() {
+  return <ChildB />
+}
+function ChildB() {
+  return <ChildC />
+}
+function ChildC() {
+  return <ChildD />
+}
+function ChildD() {
+  const data = useContext(DataContext)
+  return <div>{data}</div>
+}
+export default App;
