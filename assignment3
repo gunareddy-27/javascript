@@ -136,12 +136,16 @@ import { ListContext } from './ListContext';
 
 const AddItem = () => {
   const [inputValue, setInputValue] = useState('');
+  const [error, setError] = useState('');
   const { dispatch } = useContext(ListContext);
 
   const handleAddItem = () => {
     if (inputValue.trim()) {
       dispatch({ type: 'ADD_ITEM', payload: inputValue });
       setInputValue('');
+      setError('');
+    } else {
+      setError('Please enter an item');
     }
   };
 
@@ -153,6 +157,7 @@ const AddItem = () => {
         onChange={(e) => setInputValue(e.target.value)}
         placeholder="Enter a new item"
       />
+      {error && <p style={{ color: 'red' }}>{error}</p>}
       <button onClick={handleAddItem}>Add Item</button>
     </div>
   );
