@@ -191,3 +191,25 @@ export const ListProvider = ({ children }) => {
     </ListContext.Provider>
   );
 };
+
+import React,{useState,useEffect,useRef} from "react";
+
+function CounterWithPrev(){
+  const[count,setCount] = useState(0);
+  const prevCountRef = useRef();
+
+  useEffect(()=>{
+    prevCountRef.current = count;
+  },[count]);
+
+  return(
+    <div>
+      <p>Count: {count}</p>
+      <p>Prev Count: {prevCountRef.current}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+      <button onClick={() => setCount(count - 1)}>Decrement</button>
+    </div>
+  )
+}
+
+export default CounterWithPrev;
