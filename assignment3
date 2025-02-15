@@ -1,0 +1,188 @@
+import React from 'react';
+import { ListProvider } from './components/ListContext';
+import AddItem from './components/AddItem';
+import ItemList from './components/ItemList';
+import './App.css';
+
+const App = () => {
+  return (
+    <ListProvider>
+      <div>
+        <h1>Item List Manager</h1>
+        <AddItem />
+        <ItemList />
+      </div>
+    </ListProvider>
+  );
+};
+
+export default App;
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  text-align: center;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 8px 12px;
+  border: none;
+  background: #b2a6cd;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+.item-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #eee;
+  padding: 8px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.item button {
+  background: #dc3545;
+  display: inline-block;
+}
+
+.item button:hover {
+  background: #b02a37;
+}
+
+.count {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+import React, { useContext, useMemo } from 'react';
+import { ListContext } from './ListContext';
+
+const ItemList = () => {
+  const { list, dispatch } = useContext(ListContext);
+
+  const memoizedList = useMemo(() => list, [list]);
+
+  const handleRemoveItem = (id) => {
+    dispatch({ type: 'REMOVE_ITEM', payload: id });
+  };
+
+  return (
+    <div>
+      <h2>Items List ({memoizedList.length})</h2>
+      <ul>
+        {memoizedList.map(item => (
+          <li key={item.id}>
+            {item.text}
+            <button onClick={() => handleRemoveItem(item.id)}>Remove</button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default ItemList;
+
+import React, { useState, useContext } from 'react';
+import { ListContext } from './ListContext';
+
+const AddItem = () => {
+  const [inputValue, setInputValue] = useState('');
+  const { dispatch } = useContext(ListContext);
+
+  const handleAddItem = () => {
+    if (inputValue.trim()) {
+      dispatch({ type: 'ADD_ITEM', payload: inputValue });
+      setInputValue('');
+    }
+  };
+
+  return (
+    <div>
+      <input
+        type="text"
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+        placeholder="Enter a new item"
+      />
+      <button onClick={handleAddItem}>Add Item</button>
+    </div>
+  );
+};
+
+export default AddItem;
+
+import React, { useReducer, createContext, useMemo } from 'react';
+
+export const ListContext = createContext();
+
+const listReducer = (state, action) => {
+  switch (action.type) {
+    case 'ADD_ITEM':
+      return [...state, { id: Date.now(), text: action.payload }];
+    case 'REMOVE_ITEM':
+      return state.filter(item => item.id !== action.payload);
+    default:
+      return state;
+  }
+};
+
+export const ListProvider = ({ children }) => {
+  const [list, dispatch] = useReducer(listReducer, []);
+
+  const contextValue = useMemo(() => ({ list, dispatch }), [list]);
+
+  return (
+    <ListContext.Provider value={contextValue}>
+      {children}
+    </ListContext.Provider>
+  );
+};
