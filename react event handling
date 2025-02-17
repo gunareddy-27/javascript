@@ -1,0 +1,136 @@
+function App(){
+  const handleClick=()=>{
+    alert("Button Clicked.");
+  };
+  return(
+    <button onClick={handleClick}>Click me</button>
+  )
+}
+
+export default App;
+
+import React, { useState } from "react";
+
+function App() {
+  const [text, setText] = useState("");
+  const [result, setResult] = useState("");
+  const [showResult, setShowResult] = useState(false);
+
+  const handleChange = (event) => {
+    setText(event.target.value);
+  };
+
+  const handleClick = () => {
+    setResult(text);
+    setShowResult(true);
+  };
+
+  return (
+    <div>
+      <input type="text" value={text} onChange={handleChange} />
+      <button onClick={handleClick}>Show Result</button>
+      {showResult && <p>Your text: {result}</p>}
+    </div>
+  );
+}
+
+export default App;
+
+import React, { useState } from "react";
+import "./App.css";
+
+function App() {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <div className="App">
+      <button
+        className={`hover-button ${isHovered ? "hovered" : ""}`}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        Hover Me
+      </button>
+      {isHovered && <p className="hover-text">Mouse is over the button</p>}
+    </div>
+  );
+}
+
+export default App;
+App.css
+.App {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.hover-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: blue;
+  color: black;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+.hover-button.hovered {
+  background-color: red;
+  color: white;
+}
+
+.hover-text {
+  font-size: 18px;
+  margin-top: 10px;
+  color: black;
+}
+
+import React,{ useState } from "react";
+import "./App.css"
+function App(){
+
+  const[key, setKey]=useState("");
+
+  const handleKeyDown=(event)=>{
+    setKey(event.key);
+  }
+
+  return(
+    <div className="App">
+      <h1>Welcome to Keyboard!</h1>
+      {key && <h2>Pressed key : {key}</h2>}
+      <input type="text" onKeyDown={handleKeyDown} placeholder="Press any key"/>
+    </div>
+    )
+}
+
+export default App;
+App.css
+.App {
+  text-align: center;
+  margin-top: 50px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #333;
+}
+
+h2 {
+  color: #007bff;
+  margin-top: 20px;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 5px rgba(0, 91, 187, 0.5);
+}
